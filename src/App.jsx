@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 
 import Header from "./components/header/Header";
 import LandingSection from "./page-sections/landing-section/LandingSection";
 import VenuesSection from "./page-sections/venue-section/VenuesSection";
 import AddOns from "./page-sections/add-ons/AddOns";
+import MealsSection from "./page-sections/meals/MealsSection";
+import DetailsPopUp from "./components/details-pop-up/DetailsPopUp";
 
 function App() {
     const [venues, setVenues] = useState([
@@ -77,14 +79,59 @@ function App() {
         },
     ]);
 
+    const [meals, setMeals] = useState([
+        {
+            id: 1,
+            name: "Breakfast",
+            cost: 50,
+            selected: false,
+        },
+        {
+            id: 2,
+            name: "High Tea",
+            cost: 25,
+            selected: false,
+        },
+        {
+            id: 3,
+            name: "Lunch",
+            cost: 65,
+            selected: false,
+        },
+        {
+            id: 4,
+            name: "Dinner",
+            cost: 70,
+            selected: false,
+        },
+    ]);
+
+    const [numberOfPeople, setNumberOfPeople] = useState(0);
+
+    // State for total costs
     const [totalVenueCost, setTotalVenueCost] = useState(0);
     const [totalAddOnsCost, setTotalAddOnsCost] = useState(0);
+    const [totalMealCost, setTotalMealCost] = useState(0);
+    const [totalCost, setTotalCost] = useState(0);
+
+    // selected items
+    const selectedVenues = venues.filter((venue) => venue.count > 0);
+    const selectedAddOns = addOns.filter((addOn) => addOn.count > 0);
+    const selectedMeals = meals.filter((meal) => meal.selected);
 
     const calculateTotalVenueCost = () => {
         return venues.reduce((acc, venue) => acc + venue.cost * venue.count, 0);
     };
     const calculateTotalAddOnsCost = () => {
         return addOns.reduce((acc, addOn) => acc + addOn.cost * addOn.count, 0);
+    };
+
+    const calculateTotalMealCost = () => {
+        const selectedMeals = meals.filter((meal) => meal.selected);
+        return selectedMeals.reduce(
+            (acc, meal) => acc + meal.cost * numberOfPeople,
+            0
+        );
     };
 
     useEffect(() => {
@@ -96,6 +143,16 @@ function App() {
         const newTotal = calculateTotalAddOnsCost();
         setTotalAddOnsCost(newTotal);
     }, [addOns]);
+
+    useEffect(() => {
+        const newTotal = calculateTotalMealCost();
+        setTotalMealCost(newTotal);
+        console.log("Total Meal Cost:", totalMealCost);
+    }, [meals, numberOfPeople]);
+
+    useEffect(() => {
+        setTotalCost(totalVenueCost + totalAddOnsCost + totalMealCost);
+    }, [totalVenueCost, totalAddOnsCost, totalMealCost]);
 
     return (
         <>
@@ -110,6 +167,21 @@ function App() {
                 addOns={addOns}
                 stateSetter={setAddOns}
                 addOnsTotalCost={totalAddOnsCost}
+            />
+            <MealsSection
+                meals={meals}
+                setMeals={setMeals}
+                numberOfPeople={numberOfPeople}
+                setNumberOfPeople={setNumberOfPeople}
+                totalMealCost={totalMealCost}
+            />
+            <DetailsPopUp
+                // selected items
+                totalCost={totalCost}
+                selectedVenues={selectedVenues}
+                selectedAddOns={selectedAddOns}
+                selectedMeals={selectedMeals}
+                numOfPeople={numberOfPeople}
             />
         </>
     );

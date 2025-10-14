@@ -4,8 +4,6 @@ import Card from "../../components/card/Card";
 const VenuesSection = (props) => {
     const { venues = [], stateSetter = () => {}, totalCost = 0 } = props;
 
-    console.log("venues: ", venues);
-    console.log("totalCost: ", totalCost);
     return (
         <div className="venues-section-container">
             <h2>Venue Room Selection</h2>
