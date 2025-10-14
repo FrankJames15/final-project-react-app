@@ -38,7 +38,9 @@ const Card = (props) => {
     return (
         <div className="card" id={`card-${id}`}>
             <div className="name">{name}</div>
-            <div className="capacity">Capacity: {capacity}</div>
+            {capacity > 0 && (
+                <div className="capacity">Capacity: {capacity}</div>
+            )}
             <div className="cost">Cost: ${cost}</div>
             <div className="counter">
                 <button className="decrease-btn" onClick={handleDecrease}>
