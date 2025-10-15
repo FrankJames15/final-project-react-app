@@ -199,9 +199,10 @@ function App() {
         setTotalCost(totalVenueCost + totalAddOnsCost + totalMealCost);
     }, [totalVenueCost, totalAddOnsCost, totalMealCost]);
 
-    if (path === "/home") {
+    if (path === "/") {
         return <LandingSection />;
-    } else
+    }
+    if (path === "/main")
         return (
             <>
                 <Header popupToggle={setIsDetailsPopUpVisible} />
