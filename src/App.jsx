@@ -18,13 +18,15 @@ function App() {
             capacity: 15,
             cost: 1_500,
             count: 0,
+            imagePath: "./assets/venue-images/conference-room.jpg",
         },
         {
             id: 2,
-            name: "Audition Hall",
+            name: "Auditorium Hall",
             capacity: 200,
             cost: 5_500,
             count: 0,
+            imagePath: "./assets/venue-images/auditorium-hall.jpg",
         },
         {
             id: 3,
@@ -32,6 +34,7 @@ function App() {
             capacity: 50,
             cost: 3_500,
             count: 0,
+            imagePath: "./assets/venue-images/presentation-room.jpg",
         },
         {
             id: 4,
@@ -39,6 +42,7 @@ function App() {
             capacity: 10,
             cost: 1_000,
             count: 0,
+            imagePath: "./assets/venue-images/large-meeting-room.jpg",
         },
         {
             id: 5,
@@ -46,6 +50,7 @@ function App() {
             capacity: 5,
             cost: 800,
             count: 0,
+            imagePath: "./assets/venue-images/small-meeting-room.jpg",
         },
     ]);
 
