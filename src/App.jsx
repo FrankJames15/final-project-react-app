@@ -191,7 +191,6 @@ function App() {
     useEffect(() => {
         const newTotal = calculateTotalMealCost();
         setTotalMealCost(newTotal);
-        console.log("Total Meal Cost:", totalMealCost);
     }, [meals, numberOfPeople]);
 
     useEffect(() => {
