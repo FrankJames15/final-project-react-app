@@ -20,7 +20,7 @@ const AddOns = (props) => {
                     />
                 ))}
             </div>
-            <div className="total-cost-container">
+            <div className="total-addons-cost">
                 Total Cost: ${addOnsTotalCost}
             </div>
         </div>

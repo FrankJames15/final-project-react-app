@@ -23,7 +23,7 @@ const VenuesSection = (props) => {
                     />
                 ))}
             </div>
-            <div className="total-cost-container">Total Cost: ${totalCost}</div>
+            <div className="total-venue-cost">Total Cost: ${totalCost}</div>
         </div>
     );
 };

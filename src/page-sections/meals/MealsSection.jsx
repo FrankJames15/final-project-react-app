@@ -52,7 +52,7 @@ const MealsSection = (props) => {
                 ))}
             </div>
             <div className="total-meal-cost">
-                <strong>Total Meal Cost: ${totalMealCost}</strong>
+                Total Meal Cost: ${totalMealCost}
             </div>
         </section>
     );
