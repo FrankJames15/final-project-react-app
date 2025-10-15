@@ -10,7 +10,9 @@ const Header = (props) => {
 
     return (
         <header>
-            <h1>Conference Expense Planner</h1>
+            <a href="/">
+                <h1>Conference Expense Planner</h1>
+            </a>
             <nav>
                 <a href="#venue">Venue</a>
                 <a href="#add-ons">Add-ons</a>

@@ -17,6 +17,11 @@ header h1 {
     font-size: 20px;
 }
 
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
 header nav {
     display: flex;
     align-items: center;
