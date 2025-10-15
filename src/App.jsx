@@ -9,7 +9,6 @@ import DetailsPopUp from "./components/details-pop-up/DetailsPopUp";
 
 function App() {
     const path = window.location.pathname;
-    console.log("Current path:", path);
 
     const [venues, setVenues] = useState([
         {
