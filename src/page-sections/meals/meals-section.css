@@ -1,0 +1,51 @@
+.meals-section {
+    padding: 3rem 5rem;
+    background-color: #f9f9f9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.number-input-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.number-input {
+    width: 60px;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.meals-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.meal-option {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.meal-option input {
+    margin-right: 0.5rem;
+}
+.meal-option label {
+    cursor: pointer;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; */
+}

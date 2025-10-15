@@ -25,10 +25,11 @@ const MealsSection = (props) => {
     return (
         <section className="meals-section">
             <h2>Meals Selection</h2>
-            <div className="people-input">
+            <div className="number-input-container">
                 <label>
                     Number of People:
                     <input
+                        className="number-input"
                         type="number"
                         value={numberOfPeople}
                         onChange={handleNumOfPeopleChange}
@@ -36,7 +37,7 @@ const MealsSection = (props) => {
                     />
                 </label>
             </div>
-            <div className="meals-container">
+            <div className="meals-list">
                 {meals.map((meal) => (
                     <div key={meal.id} className="meal-option">
                         <label>
