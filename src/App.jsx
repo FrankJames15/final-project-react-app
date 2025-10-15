@@ -8,6 +8,9 @@ import MealsSection from "./page-sections/meals/MealsSection";
 import DetailsPopUp from "./components/details-pop-up/DetailsPopUp";
 
 function App() {
+    const path = window.location.pathname;
+    console.log("Current path:", path);
+
     const [venues, setVenues] = useState([
         {
             id: 1,
@@ -156,42 +159,44 @@ function App() {
         setTotalCost(totalVenueCost + totalAddOnsCost + totalMealCost);
     }, [totalVenueCost, totalAddOnsCost, totalMealCost]);
 
-    return (
-        <>
-            <Header popupToggle={setIsDetailsPopUpVisible} />
-            <LandingSection />
-            <VenuesSection
-                venues={venues}
-                stateSetter={setVenues}
-                totalCost={totalVenueCost}
-            />
-            <AddOns
-                addOns={addOns}
-                stateSetter={setAddOns}
-                addOnsTotalCost={totalAddOnsCost}
-            />
-            <MealsSection
-                meals={meals}
-                setMeals={setMeals}
-                numberOfPeople={numberOfPeople}
-                setNumberOfPeople={setNumberOfPeople}
-                totalMealCost={totalMealCost}
-            />
-
-            {/* details pop up */}
-            {isDetailsPopUpVisible && (
-                <DetailsPopUp
-                    // selected items
-                    totalCost={totalCost}
-                    selectedVenues={selectedVenues}
-                    selectedAddOns={selectedAddOns}
-                    selectedMeals={selectedMeals}
-                    numOfPeople={numberOfPeople}
-                    popupToggle={setIsDetailsPopUpVisible}
+    if (path === "/home") {
+        return <LandingSection />;
+    } else
+        return (
+            <>
+                <Header popupToggle={setIsDetailsPopUpVisible} />
+                <VenuesSection
+                    venues={venues}
+                    stateSetter={setVenues}
+                    totalCost={totalVenueCost}
                 />
-            )}
-        </>
-    );
+                <AddOns
+                    addOns={addOns}
+                    stateSetter={setAddOns}
+                    addOnsTotalCost={totalAddOnsCost}
+                />
+                <MealsSection
+                    meals={meals}
+                    setMeals={setMeals}
+                    numberOfPeople={numberOfPeople}
+                    setNumberOfPeople={setNumberOfPeople}
+                    totalMealCost={totalMealCost}
+                />
+
+                {/* details pop up */}
+                {isDetailsPopUpVisible && (
+                    <DetailsPopUp
+                        // selected items
+                        totalCost={totalCost}
+                        selectedVenues={selectedVenues}
+                        selectedAddOns={selectedAddOns}
+                        selectedMeals={selectedMeals}
+                        numOfPeople={numberOfPeople}
+                        popupToggle={setIsDetailsPopUpVisible}
+                    />
+                )}
+            </>
+        );
 }
 
 export default App;

@@ -5,7 +5,7 @@ const AddOns = (props) => {
     const { addOns = [], stateSetter = () => {}, addOnsTotalCost = 0 } = props;
 
     return (
-        <div className="add-ons-section-container">
+        <div className="add-ons-section-container" id="add-ons">
             <h2>Add-Ons Selection</h2>
             <div className="card-container">
                 {addOns.map((addOn) => (

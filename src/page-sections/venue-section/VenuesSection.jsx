@@ -5,7 +5,7 @@ const VenuesSection = (props) => {
     const { venues = [], stateSetter = () => {}, totalCost = 0 } = props;
 
     return (
-        <div className="venues-section-container">
+        <div className="venues-section-container" id="venue">
             <h2>Venue Room Selection</h2>
             <div className="card-container">
                 {venues.map((venue) => (

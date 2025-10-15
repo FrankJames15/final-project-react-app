@@ -23,7 +23,7 @@ const MealsSection = (props) => {
     };
 
     return (
-        <section className="meals-section">
+        <section className="meals-section" id="meals">
             <h2>Meals Selection</h2>
             <div className="number-input-container">
                 <label>
