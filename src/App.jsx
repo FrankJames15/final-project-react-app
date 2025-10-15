@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./components/header/Header";
 import LandingSection from "./page-sections/landing-section/LandingSection";
@@ -18,7 +18,10 @@ function App() {
             capacity: 15,
             cost: 1_500,
             count: 0,
-            imagePath: "./assets/venue-images/conference-room.jpg",
+            imagePath: new URL(
+                "./assets/venues-images/conference-room.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 2,
@@ -26,7 +29,10 @@ function App() {
             capacity: 200,
             cost: 5_500,
             count: 0,
-            imagePath: "./assets/venue-images/auditorium-hall.jpg",
+            imagePath: new URL(
+                "./assets/venues-images/auditorium-hall.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 3,
@@ -34,7 +40,10 @@ function App() {
             capacity: 50,
             cost: 3_500,
             count: 0,
-            imagePath: "./assets/venue-images/presentation-room.jpg",
+            imagePath: new URL(
+                "./assets/venues-images/presentation-room.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 4,
@@ -42,7 +51,10 @@ function App() {
             capacity: 10,
             cost: 1_000,
             count: 0,
-            imagePath: "./assets/venue-images/large-meeting-room.jpg",
+            imagePath: new URL(
+                "./assets/venues-images/large-meeting-room.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 5,
@@ -50,7 +62,10 @@ function App() {
             capacity: 5,
             cost: 800,
             count: 0,
-            imagePath: "./assets/venue-images/small-meeting-room.jpg",
+            imagePath: new URL(
+                "./assets/venues-images/small-meeting-room.png",
+                import.meta.url
+            ).href,
         },
     ]);
 
