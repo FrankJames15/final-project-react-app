@@ -75,30 +75,50 @@ function App() {
             name: "Projectors",
             cost: 200,
             count: 0,
+            imagePath: new URL(
+                "./assets/add-ons-images/projector.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 2,
             name: "Speaker",
             cost: 35,
             count: 0,
+            imagePath: new URL(
+                "./assets/add-ons-images/speaker.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 3,
             name: "Microphones",
             cost: 45,
             count: 0,
+            imagePath: new URL(
+                "./assets/add-ons-images/microphone.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 4,
             name: "Whiteboards",
             cost: 80,
             count: 0,
+            imagePath: new URL(
+                "./assets/add-ons-images/whiteboard.png",
+                import.meta.url
+            ).href,
         },
         {
             id: 5,
             name: "Signage",
             cost: 80,
             count: 0,
+            imagePath: new URL(
+                "./assets/add-ons-images/signage.png",
+                import.meta.url
+            ).href,
         },
     ]);
 

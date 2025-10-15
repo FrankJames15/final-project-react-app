@@ -16,6 +16,7 @@ const AddOns = (props) => {
                         cost={addOn.cost}
                         count={addOn.count}
                         stateSetter={stateSetter}
+                        imagePath={addOn.imagePath}
                     />
                 ))}
             </div>
