@@ -1,10 +1,15 @@
 header {
-    background-color: navy;
-    color: white;
+    background-color: #fff;
+    color: #444;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0; /* keep header at the top when scrolling */
+    z-index: 1000; /* ensure header stays above other content */
+    width: 100%;
 }
 
 header h1 {
@@ -20,7 +25,7 @@ header nav {
 }
 
 header nav a {
-    color: white;
+    color: #444;
     text-decoration: none;
     font-size: 18px;
 }
@@ -31,8 +36,8 @@ header nav a:hover {
 
 header button {
     background-color: white;
-    color: navy;
-    border: none;
+    color: #444;
+    border: #444 1px solid;
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 16px;
