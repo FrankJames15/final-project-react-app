@@ -1,0 +1,52 @@
+/* this is the pop-up or modal */
+
+.details-pop-up-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.details-pop-up-container h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+.details-pop-up-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.details-pop-up-container th,
+.details-pop-up-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.details-pop-up-container th {
+    background-color: #f4f4f4;
+}
+
+.details-pop-up-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.details-pop-up-container tr:hover {
+    background-color: #f1f1f1;
+}
+.details-pop-up-container .close-button {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    float: right;
+}

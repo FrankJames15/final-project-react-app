@@ -1,7 +1,13 @@
 import React from "react";
 import "./Header.css";
 
-const Header = () => {
+const Header = (props) => {
+    const { popupToggle = () => {} } = props;
+
+    const handlePopupToggle = () => {
+        popupToggle((prev) => !prev);
+    };
+
     return (
         <header>
             <h1>Conference Expense Planner</h1>
@@ -10,7 +16,7 @@ const Header = () => {
                 <a href="#add-ons">Add-ons</a>
                 <a href="#meals">Meals</a>
             </nav>
-            <button>Show Details</button>
+            <button onClick={handlePopupToggle}>Show Details</button>
         </header>
     );
 };

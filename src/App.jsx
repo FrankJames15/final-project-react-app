@@ -114,6 +114,8 @@ function App() {
     const [totalMealCost, setTotalMealCost] = useState(0);
     const [totalCost, setTotalCost] = useState(0);
 
+    const [isDetailsPopUpVisible, setIsDetailsPopUpVisible] = useState(false);
+
     // selected items
     const selectedVenues = venues.filter((venue) => venue.count > 0);
     const selectedAddOns = addOns.filter((addOn) => addOn.count > 0);
@@ -156,7 +158,7 @@ function App() {
 
     return (
         <>
-            <Header />
+            <Header popupToggle={setIsDetailsPopUpVisible} />
             <LandingSection />
             <VenuesSection
                 venues={venues}
@@ -175,14 +177,19 @@ function App() {
                 setNumberOfPeople={setNumberOfPeople}
                 totalMealCost={totalMealCost}
             />
-            <DetailsPopUp
-                // selected items
-                totalCost={totalCost}
-                selectedVenues={selectedVenues}
-                selectedAddOns={selectedAddOns}
-                selectedMeals={selectedMeals}
-                numOfPeople={numberOfPeople}
-            />
+
+            {/* details pop up */}
+            {isDetailsPopUpVisible && (
+                <DetailsPopUp
+                    // selected items
+                    totalCost={totalCost}
+                    selectedVenues={selectedVenues}
+                    selectedAddOns={selectedAddOns}
+                    selectedMeals={selectedMeals}
+                    numOfPeople={numberOfPeople}
+                    popupToggle={setIsDetailsPopUpVisible}
+                />
+            )}
         </>
     );
 }

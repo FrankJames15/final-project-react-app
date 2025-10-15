@@ -7,11 +7,21 @@ const DetailsPopUp = (props) => {
         selectedAddOns = [],
         selectedMeals = [],
         numOfPeople = 0,
+
+        popupToggle = () => {},
     } = props;
+
+    const handleClose = () => {
+        popupToggle((prev) => !prev);
+    };
+
     return (
-        <>
+        <div className="details-pop-up-container">
+            <button className="close-button" onClick={handleClose}>
+                <span>&times;</span>
+            </button>
             <div>Total Cost for the Event</div>
-            <h2>{totalCost}</h2>
+            <h1>${totalCost}</h1>
             <table>
                 <tr>
                     <th>Name</th>
@@ -44,7 +54,7 @@ const DetailsPopUp = (props) => {
                     </tr>
                 ))}
             </table>
-        </>
+        </div>
     );
 };
 
